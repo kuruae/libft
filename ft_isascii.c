@@ -1,6 +1,6 @@
-int	ft_isalpha(int	c)
+int	ft_isascii(int	c)
 {
-	if (c >= 'a' && <= 'z' || c >= 'A' && <= 'Z')
+	if (c <= 127)
 		return (1);
 	return (0);
 }
