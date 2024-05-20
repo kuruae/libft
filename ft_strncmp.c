@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:31:12 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 16:46:38 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/20 16:50:54 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/20 17:09:11 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char			chr;
-	unsigned int	i;
+	size_t	i;
 
-	chr = c;
 	i = 0;
-	while (s[i])
+	while (s2 && s1 && i < n)
 	{
-		if (s[i] == chr)
-			return ((char *)&s[i]);
+		if ((unsigned char)s1[i] > (unsigned char)s2[i])
+			return (1);
+		if ((unsigned char)s1[i] < (unsigned char)s2[i])
+			return (-1);
 		i++;
 	}
-	if (s[i] == chr)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (0);
 }

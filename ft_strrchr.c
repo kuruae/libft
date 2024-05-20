@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:31:12 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 16:46:38 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/20 16:26:14 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/20 16:50:18 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char			chr;
-	unsigned int	i;
+	int		i;
+	char	chr;
 
 	chr = c;
-	i = 0;
-	while (s[i])
+	i = ft_strlen(s);
+	while (i != -1)
 	{
 		if (s[i] == chr)
 			return ((char *)&s[i]);
-		i++;
+		i--;
 	}
-	if (s[i] == chr)
-		return ((char *)&s[i]);
 	return (NULL);
 }
