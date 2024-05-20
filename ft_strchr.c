@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:00:21 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 14:38:27 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/20 15:31:12 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/20 16:18:24 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char			chr;
+	unsigned int	i;
 
+	chr = c;
 	i = 0;
 	while (s[i])
+	{
+		if (s[i] == chr)
+			return ((char *)&s[i]);
 		i++;
-	return (i);
+	}
+	if (s[i] == chr)
+		return ((char *)&s[i]);
+	return (NULL);
 }

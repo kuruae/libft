@@ -6,13 +6,13 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:19:46 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 14:32:55 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:45:36 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcopy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 

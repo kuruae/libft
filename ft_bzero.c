@@ -6,13 +6,13 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 10:01:25 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 10:41:23 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:50:53 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	memset(s, 0, n);
+	ft_memset(s, 0, n);
 }
