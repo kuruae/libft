@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memove.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 10:00:21 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 14:38:27 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/20 11:32:22 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/20 14:36:05 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	return (dest);
 }
