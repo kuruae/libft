@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 15:31:12 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/21 09:58:11 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/21 11:03:52 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/21 12:06:57 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isspace(int s)
 {
-	char			chr;
-	unsigned int	i;
+	if ((s >= 9 && s <= 13) || s == 32)
+		return (1);
+	return (0);
+}
 
-	chr = c;
+int	ft_atoi(const char *nptr)
+{
+	int	i;
+	int	result;
+	int	sign;
+
 	i = 0;
-	while (s[i])
+	result = 0;
+	sign = 1;
+	while (ft_isspace(nptr[i]) == 1)
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (s[i] == chr)
-			return ((char *)&s[i]);
+		if (nptr[i] == '-')
+			sign = -1;
 		i++;
 	}
-	if (s[i] == chr)
-		return ((char *)&s[i]);
-	return (NULL);
+	while (nptr[i] && ft_isdigit(nptr[i]) == 1)
+	{
+		result = (result * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
