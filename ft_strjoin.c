@@ -6,13 +6,13 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:48:20 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/21 16:06:13 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/24 13:43:11 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	join_len(char const *s1, char const *s2)
+static int	join_len(char const *s1, char const *s2)
 {
 	int	len1;
 	int	len2;
