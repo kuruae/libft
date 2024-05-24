@@ -28,7 +28,7 @@ SRC += ft_strrchr.c
 SRC += ft_strncmp.c
 SRC += ft_memchr.c
 SRC += ft_memcmp.c
-# SRC += ft_strnstr.c
+SRC += ft_strnstr.c
 SRC += ft_atoi.c
 SRC += ft_calloc.c
 SRC += ft_strdup.c
@@ -36,7 +36,7 @@ SRC += ft_substr.c
 SRC += ft_strjoin.c
 SRC += ft_strtrim.c
 SRC += ft_split.c
-SRC += ft_itoa.c
+# SRC += ft_itoa.c
 
 ### SRCS #######################################################################
 

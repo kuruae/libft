@@ -6,7 +6,7 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 10:33:36 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/24 11:57:54 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:05:08 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t  j;
+	size_t	j;
 
 	i = 0;
 	if (!*little)
