@@ -6,7 +6,7 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:15:32 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/21 15:16:15 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:46:23 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = 0;
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	if (len + start >= ft_strlen(s))
+		len = ft_strlen(s) - start;
 	substr = malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
