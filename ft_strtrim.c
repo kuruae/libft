@@ -6,17 +6,14 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:13:12 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/21 17:51:14 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/24 13:43:27 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	checkset(char c, char const *set)
+static int	checkset(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
 	while (*set)
 	{
 		if (c == *set)
@@ -26,7 +23,7 @@ int	checkset(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+static char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 

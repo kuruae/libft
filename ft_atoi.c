@@ -6,13 +6,13 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 11:03:52 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/21 12:06:57 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/24 13:42:21 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int s)
+static int	ft_isspace(int s)
 {
 	if ((s >= 9 && s <= 13) || s == 32)
 		return (1);
