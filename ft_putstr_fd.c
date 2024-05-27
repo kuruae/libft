@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 10:33:36 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/27 12:36:25 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/27 11:51:29 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/27 11:52:43 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
-	if (!*little)
-		return ((char *)big);
-	if (len == (size_t)-1)
-		len = ft_strlen(big);
 	i = 0;
-	while (i <= len - ft_strlen(little) && big[i])
+	while (s[i])
 	{
-		j = 0;
-		while (big[i + j] && little[j] && (i + j) < len)
-		{
-			if (big[i + j] != little[j])
-				break ;
-			j++;
-		}
-		if (!little[j])
-			return ((char *)big + i);
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (NULL);
 }

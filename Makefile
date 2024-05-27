@@ -37,6 +37,12 @@ SRC += ft_strjoin.c
 SRC += ft_strtrim.c
 SRC += ft_split.c
 SRC += ft_itoa.c
+SRC += ft_strmapi.c
+SRC += ft_striteri.c
+SRC += ft_putchar_fd.c
+SRC += ft_putstr_fd.c
+SRC += ft_putendl_fd.c
+SRC += ft_putnbr_fd.c
 
 ### SRCS #######################################################################
 
