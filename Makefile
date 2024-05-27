@@ -44,9 +44,20 @@ SRC += ft_putstr_fd.c
 SRC += ft_putendl_fd.c
 SRC += ft_putnbr_fd.c
 
+### SRC_BONUS #################################################################
+
+SRC_BONUS = ft_lstnew_bonus.c
+SRC_BONUS = ft_lstadd_front_bonus.c
+SRC_BONUS = ft_lstsize_bonus.c
+SRC_BONUS = ft_lstlast_bonus.c
+SRC_BONUS = ft_lstadd_back_bonus.c
+SRC_BONUS = ft_lstdelone_bonus.c
+SRC_BONUS = ft_lstclear_bonus.c
+
 ### SRCS #######################################################################
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
+SRCS_BONUS = $(addprefix $(SRC_DIR), $(SRC_BONUS))
 
 ### HEAD #######################################################################
 
@@ -55,6 +66,7 @@ INC_DIR = ./includes/
 ### OBJS #######################################################################
 
 OBJS := $(SRCS:.c=.o)
+BONUS_OBJS := $(SRCS_BONUS:.c=.o)
 
 ### COMMANDS ###################################################################
 
@@ -71,12 +83,15 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
+bonus : $(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY : all bonus clean fclean re
