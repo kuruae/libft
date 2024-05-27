@@ -1,6 +1,6 @@
 ### COMPILE ####################################################################
 
-CC = cc 
+CC = cc
 CFLAGS = -Werror -Wextra -Wall -I $(INC_DIR)
 
 ### LIB NAME ###################################################################
@@ -36,7 +36,7 @@ SRC += ft_substr.c
 SRC += ft_strjoin.c
 SRC += ft_strtrim.c
 SRC += ft_split.c
-# SRC += ft_itoa.c
+SRC += ft_itoa.c
 
 ### SRCS #######################################################################
 
@@ -45,7 +45,7 @@ SRCS = $(addprefix $(SRC_DIR), $(SRC))
 ### HEAD #######################################################################
 
 INC_DIR = ./includes/
-	
+
 ### OBJS #######################################################################
 
 OBJS := $(SRCS:.c=.o)
@@ -70,7 +70,7 @@ clean :
 
 fclean : clean
 	$(RM) $(NAME)
-	
+
 re: fclean all
 
 .PHONY : all clean fclean re

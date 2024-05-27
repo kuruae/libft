@@ -14,9 +14,6 @@
 
 static int	checkset(char c, char const *set)
 {
-	int	i;
-
-	i = 0;
 	while (*set)
 	{
 		if (c == *set)

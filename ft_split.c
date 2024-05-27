@@ -12,6 +12,18 @@
 
 #include "libft.h"
 
+static int	last_pos(const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+	{
+		i++;
+	}
+	return (i);
+}
+
 static void	ft_free(char **str)
 {
 	int	i;
@@ -33,48 +45,54 @@ static int	word_count(char const *s, char c)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] != c && (i == 00 || s[i - 1] == c))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			count++;
 		i++;
 	}
 	return (count);
 }
 
+static char	*array(const char *s, char c)
+{
+	int		i;
+	char	*tab;
+
+	i = last_pos(s, c);
+	tab = malloc((i + 1) * sizeof(char));
+	if (!tab)
+	{
+		free (tab);
+		return (NULL);
+	}
+	ft_strlcpy(tab, s, i + 1);
+	tab[i] = '\0';
+	s += i;
+	return (tab);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
-	int		x;
-	int		wlen;
 	char	**tab;
 
 	i = 0;
-	x = 0;
 	tab = malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
 	while (*s)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
-		wlen = 0;
-		while (s[wlen] && s[wlen] != c)
-			wlen++;
-		tab[i] = malloc((wlen + 1) * sizeof(char));
-		if (!tab[i])
+		if (*s)
 		{
-			ft_free(tab);
-			return (NULL);
+			tab[i] = array(s, c);
+			if (!tab[i++])
+			{
+				ft_free(tab);
+				return (NULL);
+			}
+			s = s + last_pos(s, c);
 		}
-		j = 0;
-		while (j < wlen)
-		{
-			tab[i][j] = *s;
-			s++;
-			j++;
-		}
-		tab[i][j] = '\0';
-		i++;
 	}
 	tab[i] = NULL;
 	return (tab);
