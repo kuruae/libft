@@ -6,7 +6,7 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:33:04 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/20 14:33:05 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:09:07 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <limits.h>
 
 typedef struct s_list
 {

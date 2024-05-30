@@ -6,7 +6,7 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 15:33:36 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/24 13:57:55 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:25:31 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,3 @@ char	**ft_split(char const *s, char c)
 	tab[i] = NULL;
 	return (tab);
 }
-
-/* int	main(void)
-{
-	printf("%d\n", word_count(" ", ' '));
-} */

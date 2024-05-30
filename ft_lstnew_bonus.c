@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 12:17:13 by emagnani          #+#    #+#             */
-/*   Updated: 2024/05/28 16:36:36 by emagnani         ###   ########.fr       */
+/*   Created: 2024/05/27 14:31:47 by emagnani          #+#    #+#             */
+/*   Updated: 2024/05/27 14:39:07 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	const size_t	size_total = nmemb * size;
-	void			*ptr;
+	t_list	*node;
 
-	ptr = NULL;
-	if (size_total == 0 || nmemb <= SIZE_MAX / size)
-		ptr = malloc(size_total);
-	if (ptr != NULL)
-		ft_bzero(ptr, size_total);
-	return (ptr);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
