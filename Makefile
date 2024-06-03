@@ -44,7 +44,6 @@ SRC += ft_putstr_fd.c
 SRC += ft_putendl_fd.c
 SRC += ft_putnbr_fd.c
 
-/home/emagnani/Pictures/Screenshots/Screenshot from 2024-05-14 15-54-46.png
 ### SRC_BONUS #################################################################
 
 SRC_BONUS  = ft_lstnew_bonus.c
