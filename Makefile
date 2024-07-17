@@ -43,32 +43,46 @@ SRC += ft_putchar_fd.c
 SRC += ft_putstr_fd.c
 SRC += ft_putendl_fd.c
 SRC += ft_putnbr_fd.c
+SRC += ft_lstnew.c
+SRC += ft_lstadd_front.c
+SRC += ft_lstsize.c
+SRC += ft_lstlast.c
+SRC += ft_lstadd_back.c
+SRC += ft_lstdelone.c
+SRC += ft_lstclear.c
+SRC += ft_lstiter.c
+SRC += ft_lstmap.c
 
-### SRC_BONUS #################################################################
+### PRINTF #######################################################################
 
-SRC_BONUS  = ft_lstnew_bonus.c
-SRC_BONUS += ft_lstadd_front_bonus.c
-SRC_BONUS += ft_lstsize_bonus.c
-SRC_BONUS += ft_lstlast_bonus.c
-SRC_BONUS += ft_lstadd_back_bonus.c
-SRC_BONUS += ft_lstdelone_bonus.c
-SRC_BONUS += ft_lstclear_bonus.c
-SRC_BONUS += ft_lstiter_bonus.c
-SRC_BONUS += ft_lstmap_bonus.c
+SRC_PRINTF  = ft_printf.c
+SRC_PRINTF += ft_printf_chars.c
+SRC_PRINTF += ft_printf_nbrs.c
+
+### GET_NEXT_LINE ###########################################################
+
+SRC_GNL  = get_next_line.c
+SRC_GNL += get_next_line_utils.c
+SRC_GNL += get_next_line_bonus.c
+SRC_GNL += get_next_line_utils_bonus.c
 
 ### SRCS #######################################################################
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
-SRCS_BONUS = $(addprefix $(SRC_DIR), $(SRC_BONUS))
+SRCS_PRINTF = $(addprefix $(PRINTF_DIR), $(SRC_PRINTF))
+SRCS_GNL = $(addprefix $(GNL_DIR), $(SRC_GNL))
 
 ### HEAD #######################################################################
 
 INC_DIR = ./includes/
+PRINTF_DIR = printf/
+GNL_DIR = GNL/
 
 ### OBJS #######################################################################
 
 OBJS := $(SRCS:.c=.o)
-BONUS_OBJS := $(SRCS_BONUS:.c=.o)
+PRINTF_OBJS := $(SRCS_PRINTF:.c=.o)
+GNL_OBJS := $(SRCS_GNL:.c=.o)
 
 ### COMMANDS ###################################################################
 
@@ -82,18 +96,15 @@ AR   = ar rcs
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-
-bonus : $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME) : $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
+	$(AR) $(NAME) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
 
 clean :
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all clean fclean re
