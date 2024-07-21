@@ -30,6 +30,7 @@ SRC += ft_memchr.c
 SRC += ft_memcmp.c
 SRC += ft_strnstr.c
 SRC += ft_atoi.c
+SRC += ft_atol.c
 SRC += ft_calloc.c
 SRC += ft_strdup.c
 SRC += ft_substr.c
@@ -63,8 +64,6 @@ SRC_PRINTF += ft_printf_nbrs.c
 
 SRC_GNL  = get_next_line.c
 SRC_GNL += get_next_line_utils.c
-SRC_GNL += get_next_line_bonus.c
-SRC_GNL += get_next_line_utils_bonus.c
 
 ### SRCS #######################################################################
 
@@ -91,7 +90,7 @@ AR   = ar rcs
 
 ################################################################################
 
-%.o%.c:
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
