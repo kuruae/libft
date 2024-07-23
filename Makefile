@@ -14,6 +14,7 @@ SRC += ft_isdigit.c
 SRC += ft_isalnum.c
 SRC += ft_isascii.c
 SRC += ft_isprint.c
+SRC += ft_isspace.c
 SRC += ft_strlen.c
 SRC += ft_memset.c
 SRC += ft_bzero.c
