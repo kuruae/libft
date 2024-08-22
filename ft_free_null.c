@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_null.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enzo <enzo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:35:32 by emagnani          #+#    #+#             */
-/*   Updated: 2024/07/23 18:09:00 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/08/08 19:35:35 by enzo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_free_null(void *ptr)
+void	ft_free_null(void **ptr)
 {
-	if (ptr && ptr != NULL)
+	if (ptr && *ptr)
 	{
-		free(ptr);
-		return (NULL);
+		free(*ptr);
+		*ptr = NULL;
 	}
-	else
-		return (ptr);
 }
