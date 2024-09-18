@@ -57,6 +57,7 @@ SRC += ft_lstmap.c
 SRC += ft_free_null.c
 SRC += ft_free_str_array.c
 SRC += ft_is_float.c
+SRC += ft_str_isdigit.c
 
 ### PRINTF #######################################################################
 
