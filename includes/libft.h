@@ -6,7 +6,7 @@
 /*   By: enzo <enzo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:33:04 by emagnani          #+#    #+#             */
-/*   Updated: 2024/09/18 22:49:55 by enzo             ###   ########.fr       */
+/*   Updated: 2024/09/19 22:10:07 by enzo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	ft_free_null(void **ptr);
 void	ft_free_str_array(char ***array);
 bool	ft_is_float(char *str);
 bool	ft_str_isdigit(char *str);
+double	ft_atof(const char *str);
 
 #endif
