@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_float.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enzo <enzo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:37:17 by enzo              #+#    #+#             */
-/*   Updated: 2024/10/22 19:56:28 by enzo             ###   ########.fr       */
+/*   Updated: 2024/10/22 20:19:19 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ bool	ft_is_float(char *str)
 		has_dot = true;
 		str++;
 		second_valid = check_float_part(&str, &has_digit, true);
-		valid = valid && second_valid;
+		if (!second_valid)
+			valid = false;
 	}
-	return (valid && has_digit && has_dot && *str == '\0');
+	if (!valid || !has_digit || !has_dot || *str != '\0')
+		return (false);
+	return (true);
 }
