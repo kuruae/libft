@@ -6,7 +6,7 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 20:51:28 by emagnani          #+#    #+#             */
-/*   Updated: 2024/06/19 16:23:53 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:28:51 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*fill_rest(char *output, char *rest)
 		i++;
 	if (output && output[i] == '\n')
 		i++;
-	rest = ft_substr(output, i, ft_strlen(output + i));
+	rest = gnl_substr(output, i, gnl_strlen(output + i));
 	if (output && output[i])
 		output[i] = '\0';
 	return (rest);
@@ -33,7 +33,7 @@ char	*read_line(int fd, char *output)
 	char	buffer[BUFFER_SIZE + 1];
 
 	bytes_read = 1;
-	while (bytes_read > 0 && !ft_strchr(output, '\n'))
+	while (bytes_read > 0 && !gnl_strchr(output, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
@@ -46,7 +46,7 @@ char	*read_line(int fd, char *output)
 			break ;
 		}
 		buffer[bytes_read] = '\0';
-		output = ft_strjoin(output, buffer);
+		output = gnl_strjoin(output, buffer);
 	}
 	return (output);
 }

@@ -6,13 +6,13 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:58:41 by emagnani          #+#    #+#             */
-/*   Updated: 2024/06/09 15:24:30 by emagnani         ###   ########.fr       */
+/*   Updated: 2024/10/23 17:28:41 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	gnl_strlen(const char *s)
 {
 	size_t	i;
 
@@ -24,14 +24,14 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*gnl_strjoin(char *s1, char *s2)
 {
 	char	*result;
 	int		len;
 	int		i;
 	int		j;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = gnl_strlen(s1) + gnl_strlen(s2);
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
@@ -53,7 +53,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (result);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*gnl_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -71,7 +71,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*gnl_substr(char *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
@@ -80,9 +80,9 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (len == 0)
 		return (NULL);
-	if (len > (ft_strlen(s) - start))
-		len = ft_strlen(s) - start;
-	if (start >= ft_strlen(s))
+	if (len > (gnl_strlen(s) - start))
+		len = gnl_strlen(s) - start;
+	if (start >= gnl_strlen(s))
 		len = 0;
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
