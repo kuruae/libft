@@ -6,9 +6,11 @@
 /*   By: emagnani <emagnani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:00:11 by emagnani          #+#    #+#             */
-/*   Updated: 2025/01/04 19:00:13 by emagnani         ###   ########.fr       */
+/*   Updated: 2025/01/04 19:06:51 by emagnani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoinch(char *s1, char c)
 {
