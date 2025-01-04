@@ -36,6 +36,7 @@ SRC += ft_calloc.c
 SRC += ft_strdup.c
 SRC += ft_substr.c
 SRC += ft_strjoin.c
+SRC += ft_strjoinch.c
 SRC += ft_strtrim.c
 SRC += ft_split.c
 SRC += ft_itoa.c
